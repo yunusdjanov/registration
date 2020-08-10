@@ -16,7 +16,7 @@ if(isset($_POST['save'])){
         redirect_to('page_register.php');
     }else{
         add_user($email , $password);
-        set_flash_message('success' , ' Регистрация успешна');
+        set_flash_message('success' , 'Регистрация успешна');
         redirect_to('page_login.php');
     }
     

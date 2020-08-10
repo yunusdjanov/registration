@@ -37,17 +37,24 @@
         <?php if(isset($_SESSION['success'])) { ?>
             <div class="alert alert-success">
             <?php echo $_SESSION['success']; ?>
+            <?php  session_unset(); ?>
             </div>
         <?php } ?>
+        <?php if(isset($_SESSION['danger'])) { ?>
+           <div class="alert alert-danger text-dark" role="alert">
+                <?php echo $_SESSION['danger']; ?>
+                 <?php  session_unset(); ?>
+            </div>
+         <?php } ?>
         <?php session_unset(); ?>
-            <form action="">
+            <form action="login.inc.php" method="POST">
                 <div class="form-group">
                     <label class="form-label" for="username">Email</label>
-                    <input type="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
+                    <input type="email" name="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="password">Пароль</label>
-                    <input type="password" id="password" class="form-control" placeholder="" >
+                    <input type="password" name="password" id="password" class="form-control" placeholder="" >
                 </div>
                 <div class="form-group text-left">
                     <div class="custom-control custom-checkbox">
@@ -55,7 +62,7 @@
                         <label class="custom-control-label" for="rememberme">Запомнить меня</label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default float-right">Войти</button>
+                <button type="submit" name="login" class="btn btn-default float-right">Войти</button>
             </form>
         </div>
         <div class="blankpage-footer text-center">
