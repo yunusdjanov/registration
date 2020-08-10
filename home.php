@@ -9,17 +9,9 @@
 </head>
 <body>
 <div class="container">
-<?php if(isset($_SESSION['danger'])) { ?>
-    <div class="alert alert-danger text-dark" role="alert">
-        <?php echo $_SESSION['danger']; ?>
-        <?php  session_unset(); ?>
-    </div>
-<?php } ?>
-
-<?php if(isset($_SESSION['logged_in'])) { ?>
+<?php if(isset($_SESSION['saved'])) { ?>
     <div class="alert alert-success">
         <?php echo $_SESSION['logged_in']; ?>
-        <?php  session_unset(); ?>
      </div>
  <?php } ?>
  </div>

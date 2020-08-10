@@ -12,7 +12,7 @@ function login($email, $password){
 };
 
 function save_user($email){
-    $_SESSION['username'] = $email;
+    $_SESSION['saved'] = $email;
 }
 
 function redirect_to($path){
