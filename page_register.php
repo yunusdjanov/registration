@@ -66,7 +66,7 @@
                                       <?php  session_unset(); ?>
                                     </div>
                                 <?php } ?>
-                                    <form id="js-login" novalidate="" action="includes/register.inc.php" method="POST">
+                                    <form id="js-login" novalidate="" action="register.inc.php" method="POST">
                                         <div class="form-group">
                                             <label class="form-label" for="emailverify">Email</label>
                                             <input type="email" name="email" id="emailverify" class="form-control" placeholder="Эл. адрес" required>
