@@ -1,6 +1,6 @@
 <?php
 
-function login($email, $password){
+function log_in($email, $password){
     $username = get_user_by_email($email);
     if (!empty($username)) {
         if (password_verify($password, $username['password'])) {
