@@ -2,14 +2,18 @@
 
 function log_in($email, $password){
     $username = get_user_by_email($email);
-    if (!empty($username)) {
-        if (password_verify($password, $username['password'])) {
-            return true;
-        }
+    if (!empty($username) AND password_verify($password, $username['password'])) {
+        save_user($username);
+        return true;
     }else{
     return false;
     }
 };
+
+
+function display_flash_message($value){
+    echo $_SESSION[$value];
+}
 
 function save_user($email){
     $_SESSION['saved'] = $email;

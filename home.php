@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "functions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +10,12 @@
 </head>
 <body>
 <div class="container">
-<?php if(isset($_SESSION['saved'])) { ?>
-    <div class="alert alert-success">
-        <?php echo $_SESSION['logged_in']; ?>
-     </div>
- <?php } ?>
+<?php if(isset($_SESSION['success'])) { ?>
+    <div class="alert alert-success text-dark" role="alert">
+        <?php display_flash_message('success'); ?>
+<?php  session_unset(); ?>
+    </div>
+<?php } ?>
  </div>
 
 

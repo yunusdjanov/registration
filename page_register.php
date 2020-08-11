@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "functions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +63,7 @@
                                 <div class="card p-4 rounded-plus bg-faded">
                                 <?php if(isset($_SESSION['danger'])) { ?>
                                     <div class="alert alert-danger text-dark" role="alert">
-                                       <?php echo $_SESSION['danger']; ?>
+                                    <?php display_flash_message('danger'); ?>
                                       <?php  session_unset(); ?>
                                     </div>
                                 <?php } ?>

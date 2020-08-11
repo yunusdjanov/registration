@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,17 +37,15 @@
         <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
         <?php if(isset($_SESSION['success'])) { ?>
             <div class="alert alert-success">
-            <?php echo $_SESSION['success']; ?>
+            <?php display_flash_message('success'); ?>
             <?php  session_unset(); ?>
             </div>
-        <?php } ?>
-        <?php if(isset($_SESSION['danger'])) { ?>
+        <?php } else { ?>
            <div class="alert alert-danger text-dark" role="alert">
-                <?php echo $_SESSION['danger']; ?>
+                <?php  display_flash_message('danger'); ?>
                  <?php  session_unset(); ?>
             </div>
          <?php } ?>
-        <?php session_unset(); ?>
             <form action="login.inc.php" method="POST">
                 <div class="form-group">
                     <label class="form-label" for="username">Email</label>
