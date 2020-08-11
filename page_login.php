@@ -40,12 +40,13 @@
             <?php display_flash_message('success'); ?>
             <?php  session_unset(); ?>
             </div>
-        <?php } else { ?>
-           <div class="alert alert-danger text-dark" role="alert">
-                <?php  display_flash_message('danger'); ?>
-                 <?php  session_unset(); ?>
-            </div>
-         <?php } ?>
+        <?php }  ?>
+            <?php if(isset($_SESSION['danger'])) { ?>
+                <div class="alert alert-danger text-dark" role="alert">
+                    <?php display_flash_message('danger'); ?>
+                    <?php  session_unset(); ?>
+                </div>
+            <?php } ?>
             <form action="login.inc.php" method="POST">
                 <div class="form-group">
                     <label class="form-label" for="username">Email</label>
